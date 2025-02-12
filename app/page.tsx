@@ -1,15 +1,15 @@
-import { GlobeAltIcon } from '@heroicons/react/24/outline';
+import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import {
-  FaGithub,
-  FaMastodon,
-  FaMedium,
-  FaWordpress,
   FaDev,
+  FaGithub,
   FaGitlab,
   FaLinkedin,
+  FaMastodon,
+  FaMedium,
   FaRegStickyNote,
-} from 'react-icons/fa';
-import { SiZenn, SiBluesky } from 'react-icons/si';
+  FaWordpress,
+} from "react-icons/fa";
+import { SiBluesky, SiZenn } from "react-icons/si";
 
 export default function Home() {
   return (
@@ -17,9 +17,7 @@ export default function Home() {
       <div className="max-w-3xl mx-auto">
         <div className="text-center space-y-12">
           <div className="space-y-4">
-            <h1 className="text-4xl font-bold text-white mb-4 animate-fade-in">
-              Yasunori MAHATA
-            </h1>
+            <h1 className="text-4xl font-bold text-white mb-4 animate-fade-in">Yasunori MAHATA</h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               ソフトウェアエンジニアです。主にウェブサービスの開発をしています。
             </p>
@@ -32,13 +30,21 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { name: 'GitHub', url: 'https://github.com/mahata', icon: <FaGithub className="h-5 w-5" /> },
-                { name: 'Bluesky', url: 'https://bsky.app/profile/mahata.org', icon: <SiBluesky className="h-5 w-5" /> },
-                { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ymahata', icon: <FaLinkedin className="h-5 w-5" /> },
-                { name: 'Zenn', url: 'https://zenn.dev/mahata', icon: <SiZenn className="h-5 w-5" /> },
-                { name: 'Note', url: 'https://note.com/ymahata', icon: <FaRegStickyNote className="h-5 w-5" /> },
-                { name: 'DEV', url: 'https://dev.to/mahata', icon: <FaDev className="h-5 w-5" /> },
-                { name: 'Medium', url: 'https://medium.com/@mahata777', icon: <FaMedium className="h-5 w-5" /> },
+                { name: "GitHub", url: "https://github.com/mahata", icon: <FaGithub className="h-5 w-5" /> },
+                {
+                  name: "Bluesky",
+                  url: "https://bsky.app/profile/mahata.org",
+                  icon: <SiBluesky className="h-5 w-5" />,
+                },
+                {
+                  name: "LinkedIn",
+                  url: "https://www.linkedin.com/in/ymahata",
+                  icon: <FaLinkedin className="h-5 w-5" />,
+                },
+                { name: "Zenn", url: "https://zenn.dev/mahata", icon: <SiZenn className="h-5 w-5" /> },
+                { name: "Note", url: "https://note.com/ymahata", icon: <FaRegStickyNote className="h-5 w-5" /> },
+                { name: "DEV", url: "https://dev.to/mahata", icon: <FaDev className="h-5 w-5" /> },
+                { name: "Medium", url: "https://medium.com/@mahata777", icon: <FaMedium className="h-5 w-5" /> },
               ].map((link) => (
                 <a
                   key={link.name}
@@ -61,9 +67,9 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
-                { name: 'Mastodon', url: 'https://mstdn.jp/@mahata', icon: <FaMastodon className="h-5 w-5" /> },
-                { name: 'GitLab Pages', url: 'https://mahata.gitlab.io', icon: <FaGitlab className="h-5 w-5" /> },
-                { name: 'WordPress', url: 'https://mahata.wordpress.com', icon: <FaWordpress className="h-5 w-5" /> },
+                { name: "Mastodon", url: "https://mstdn.jp/@mahata", icon: <FaMastodon className="h-5 w-5" /> },
+                { name: "GitLab Pages", url: "https://mahata.gitlab.io", icon: <FaGitlab className="h-5 w-5" /> },
+                { name: "WordPress", url: "https://mahata.wordpress.com", icon: <FaWordpress className="h-5 w-5" /> },
               ].map((link) => (
                 <a
                   key={link.name}

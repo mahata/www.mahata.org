@@ -17,6 +17,6 @@
     "lineWidth": 120
   },
   "files": {
-    "ignore": [".next/**"]
+    "ignore": [".next/**", ".vercel/**", "node_modules/**"]
   }
 }
