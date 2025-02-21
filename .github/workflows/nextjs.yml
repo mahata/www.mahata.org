@@ -32,5 +32,8 @@ jobs:
       - name: Build Next.js app
         run: pnpm run build
 
+      - name: Install Wrangler
+        run: pnpm install -g wrangler
+
       - name: Build Next.js app
         run: pnpm run deploy
