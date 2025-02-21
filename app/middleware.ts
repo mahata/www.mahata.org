@@ -11,8 +11,7 @@ export function middleware(request: NextRequest) {
   const targetDomain = "www.mahata.org";
 
   if (hostname !== targetDomain) {
-    const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
-    return NextResponse.redirect(`${protocol}://${targetDomain}${request.nextUrl.pathname}${request.nextUrl.search}`, {
+    return NextResponse.redirect(`https://${targetDomain}${request.nextUrl.pathname}${request.nextUrl.search}`, {
       status: 301,
     });
   }
