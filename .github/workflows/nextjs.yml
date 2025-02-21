@@ -3,6 +3,7 @@ name: Next.js CI/CD
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -35,5 +36,7 @@ jobs:
       - name: Install Wrangler
         run: pnpm install -g wrangler
 
-      - name: Build Next.js app
+      - name: Deploy Next.js app
         run: pnpm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
