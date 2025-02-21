@@ -1,23 +1,20 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   // Skip redirect in development environment
-  if (process.env.NODE_ENV === 'development') {
+  if (process.env.NODE_ENV === "development") {
     return NextResponse.next();
   }
 
-  const hostname = request.headers.get('host');
-  const targetDomain = 'www.mahata.org';
+  const hostname = request.headers.get("host");
+  const targetDomain = "www.mahata.org";
 
   if (hostname !== targetDomain) {
-    const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-    return NextResponse.redirect(
-      `${protocol}://${targetDomain}${request.nextUrl.pathname}${request.nextUrl.search}`,
-      {
-        status: 301
-      }
-    );
+    const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
+    return NextResponse.redirect(`${protocol}://${targetDomain}${request.nextUrl.pathname}${request.nextUrl.search}`, {
+      status: 301,
+    });
   }
 
   return NextResponse.next();
@@ -33,6 +30,6 @@ export const config = {
      * 4. /_vercel (Vercel internals)
      * 5. all files in the public folder
      */
-    '/((?!api|_next|static|_vercel|[\\w-]+\\.\\w+).*)',
+    "/((?!api|_next|static|_vercel|[\\w-]+\\.\\w+).*)",
   ],
 };
