@@ -18,15 +18,15 @@ export default function Home() {
         <div className="text-center space-y-12">
           <div className="space-y-4">
             <h1 className="text-4xl font-bold text-white mb-4 animate-fade-in">Yasunori MAHATA</h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              ソフトウェアエンジニアです。主にウェブサービスの開発をしています。
+            <p className="text-left text-xl text-gray-300 mb-8 leading-relaxed">
+            I’m a software developer based in Tokyo, Japan, specializing in web development. As a full-stack engineer, I work across both front-end and back-end, occasionally handling infrastructure as well. Lately, I’ve been focusing on building scalable and efficient web services.
             </p>
           </div>
 
           <div className="space-y-6">
             <h2 className="text-2xl font-semibold text-white flex items-center justify-center gap-2">
               <GlobeAltIcon className="h-6 w-6" />
-              利用しているウェブサービス
+              Web services I use.
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[
@@ -63,7 +63,7 @@ export default function Home() {
           <div className="space-y-6 pt-4">
             <h2 className="text-2xl font-semibold text-white flex items-center justify-center gap-2">
               <GlobeAltIcon className="h-6 w-6" />
-              過去に利用していたウェブサービス
+              Web services I used to use in the past.
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {[

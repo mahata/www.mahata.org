@@ -15,8 +15,8 @@ const notoSansMono = Noto_Sans_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "ソフトウェアエンジニア: Yasunori MAHATA の個人サイト",
-  description: "Yasunori MAHATA の個人サイトです。利用しているウェブサービスへのリンク集を公開しています。",
+  title: "Software Engineer: Yasunori MAHATA's Personal Site",
+  description: "Personal site of Yasunori MAHATA. I list up links to web services that I use.",
 };
 
 export default function RootLayout({
