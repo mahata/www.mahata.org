@@ -20,8 +20,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold text-white mb-4 animate-fade-in">Yasunori MAHATA</h1>
             <p className="text-left text-xl text-gray-300 mb-8 leading-relaxed">
               I’m a software developer based in Tokyo, Japan, specializing in web development. As a full-stack engineer,
-              I work across both front-end and back-end, occasionally handling infrastructure as well. Lately, I’ve been
-              focusing on building scalable and efficient web services.
+              I work across both front-end and back-end, occasionally handling infrastructure as well.
             </p>
           </div>
 
