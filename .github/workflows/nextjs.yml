@@ -27,7 +27,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "20.18.0"
           cache: "pnpm"
 
       - name: Install dependencies
@@ -40,9 +40,10 @@ jobs:
         run: pnpm run build
 
       - name: Install Wrangler
-        run: pnpm install -g wrangler
+        run: pnpm add -g wrangler@latest
 
       - name: Deploy Next.js app
         run: pnpm run deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          NODE_OPTIONS: "--max-old-space-size=4096"
