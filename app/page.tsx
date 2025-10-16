@@ -9,7 +9,8 @@ import {
   FaRegStickyNote,
   FaWordpress,
 } from "react-icons/fa";
-import { SiBluesky, SiZenn } from "react-icons/si";
+import { FaPencil } from "react-icons/fa6";
+import { SiBluesky, SiHono, SiZenn } from "react-icons/si";
 
 export default function Home() {
   return (
@@ -46,6 +47,8 @@ export default function Home() {
                 { name: "Note", url: "https://note.com/ymahata", icon: <FaRegStickyNote className="h-5 w-5" /> },
                 { name: "DEV", url: "https://dev.to/mahata", icon: <FaDev className="h-5 w-5" /> },
                 { name: "Medium", url: "https://medium.com/@mahata777", icon: <FaMedium className="h-5 w-5" /> },
+                { name: "Vercelog", url: "https://vercelog.mahata.org", icon: <SiHono className="h-5 w-5" /> },
+                { name: "しずかなインターネット", url: "https://sizu.me/mahata", icon: <FaPencil className="h-5 w-5" /> },
               ].map((link) => (
                 <a
                   key={link.name}
