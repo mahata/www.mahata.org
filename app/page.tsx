@@ -12,8 +12,6 @@ import {
 import { FaPencil } from "react-icons/fa6";
 import { SiBluesky, SiHono, SiZenn } from "react-icons/si";
 
-export const runtime = "edge";
-
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 py-12 px-4 sm:px-6 lg:px-8">
