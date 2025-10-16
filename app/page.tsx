@@ -12,7 +12,7 @@ import {
 import { FaPencil } from "react-icons/fa6";
 import { SiBluesky, SiHono, SiZenn } from "react-icons/si";
 
-export const runtime = "edge"; 
+export const runtime = "edge";
 
 export default function Home() {
   return (
