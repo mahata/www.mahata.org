@@ -48,7 +48,11 @@ export default function Home() {
                 { name: "DEV", url: "https://dev.to/mahata", icon: <FaDev className="h-5 w-5" /> },
                 { name: "Medium", url: "https://medium.com/@mahata777", icon: <FaMedium className="h-5 w-5" /> },
                 { name: "Vercelog", url: "https://vercelog.mahata.org", icon: <SiHono className="h-5 w-5" /> },
-                { name: "しずかなインターネット", url: "https://sizu.me/mahata", icon: <FaPencil className="h-5 w-5" /> },
+                {
+                  name: "しずかなインターネット",
+                  url: "https://sizu.me/mahata",
+                  icon: <FaPencil className="h-5 w-5" />,
+                },
               ].map((link) => (
                 <a
                   key={link.name}

@@ -17,6 +17,6 @@
     "lineWidth": 120
   },
   "files": {
-    "ignore": [".next/**", "node_modules/**", ".pnpm-store/**", "dist/**", "build/**"]
+    "ignore": [".next/**", "node_modules/**", ".pnpm-store/**", "dist/**", "build/**", ".vercel/**"]
   }
 }
