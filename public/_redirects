@@ -1,0 +1,3 @@
+# Redirect bare domain to www
+# This is handled by Cloudflare Pages automatically.
+# Add additional redirects here if needed.
