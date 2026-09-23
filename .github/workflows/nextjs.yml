@@ -1,15 +1,19 @@
-name: Next.js CI/CD
+name: Deploy to Netlify
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
 
+concurrency:
+  group: netlify-production
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     defaults:
@@ -39,12 +43,22 @@ jobs:
       - name: Build Next.js app
         run: pnpm run build
 
-      - name: Install Wrangler
-        run: pnpm add -g wrangler@latest
+      - name: Verify Netlify credentials
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: |
+          test -n "$NETLIFY_AUTH_TOKEN" || {
+            echo "::error::NETLIFY_AUTH_TOKEN is not configured"
+            exit 1
+          }
+          test -n "$NETLIFY_SITE_ID" || {
+            echo "::error::NETLIFY_SITE_ID is not configured"
+            exit 1
+          }
 
-      - name: Deploy Next.js app
+      - name: Deploy to Netlify
         run: pnpm run deploy
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: "9c55f6737684f629df423568821024d5"
-          NODE_OPTIONS: "--max-old-space-size=4096"
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}

@@ -8,28 +8,26 @@ pnpm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Deploy on Cloudflare Pages
+## Deploy on Netlify
 
 Production deploys are automated: every push to `main` triggers
-[`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml), which builds the app and runs
-`pnpm run deploy` in CI. That workflow, not a developer's local machine, is the source of truth
-for what's live.
+[`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml), which builds the static Next.js
+export and deploys `out/` to the existing Netlify site serving
+[mahata.org](https://mahata.org). That workflow is the source of truth for what is live.
 
-To deploy manually (e.g. to debug the pipeline), you also need:
+Configure these GitHub Actions secrets before running the workflow:
 
-- Node.js >= 22 (Wrangler's minimum requirement)
-- Wrangler installed globally (`pnpm add -g wrangler`), matching what CI does: this project has
-  no direct `wrangler` dependency, so a bare `wrangler` command isn't available otherwise
-- Cloudflare credentials available to Wrangler, either via `wrangler login` or a
-  `CLOUDFLARE_API_TOKEN` environment variable
-- A `CLOUDFLARE_ACCOUNT_ID` environment variable, so Wrangler doesn't need to look up the
-  account for you
+- `NETLIFY_AUTH_TOKEN`: a Netlify personal access token with access to the production site
+- `NETLIFY_SITE_ID`: the Site ID shown in the existing production site's Netlify configuration
 
-`pnpm run deploy` passes `wrangler pages deploy --no-bundle`: newer Wrangler versions try to
-re-bundle `@cloudflare/next-on-pages`'s output and fail to resolve its dynamic
-`__next-on-pages-dist__/assets` glob import when the project has no such assets, so bundling is
-skipped and the already-built `_worker.js` is uploaded as-is.
+The Site ID must belong to the site already serving `mahata.org`. Do not create a new Netlify
+site, because deploying to a second site will not update the production domain.
+
+To deploy manually for troubleshooting, export the same credentials and run:
 
 ```bash
+export NETLIFY_AUTH_TOKEN="..."
+export NETLIFY_SITE_ID="..."
+pnpm run build
 pnpm run deploy
 ```
