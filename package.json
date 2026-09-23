@@ -10,7 +10,7 @@
     "format": "biome format --write .",
     "pages:build": "npx @cloudflare/next-on-pages",
     "preview": "pnpm run pages:build && wrangler pages dev",
-    "deploy": "pnpm run pages:build && wrangler pages deploy"
+    "deploy": "pnpm run pages:build && wrangler pages deploy --no-bundle"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",

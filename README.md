@@ -23,6 +23,11 @@ To deploy manually (e.g. to debug the pipeline), you also need:
 - A `CLOUDFLARE_ACCOUNT_ID` environment variable, so Wrangler doesn't need to look up the
   account for you
 
+`pnpm run deploy` passes `wrangler pages deploy --no-bundle`: newer Wrangler versions try to
+re-bundle `@cloudflare/next-on-pages`'s output and fail to resolve its dynamic
+`__next-on-pages-dist__/assets` glob import when the project has no such assets, so bundling is
+skipped and the already-built `_worker.js` is uploaded as-is.
+
 ```bash
 pnpm run deploy
 ```
