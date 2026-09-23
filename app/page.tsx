@@ -44,7 +44,6 @@ export default function Home() {
                   icon: <FaLinkedin className="h-5 w-5" />,
                 },
                 { name: "Zenn", url: "https://zenn.dev/mahata", icon: <SiZenn className="h-5 w-5" /> },
-                { name: "Note", url: "https://note.com/ymahata", icon: <FaRegStickyNote className="h-5 w-5" /> },
                 { name: "DEV", url: "https://dev.to/mahata", icon: <FaDev className="h-5 w-5" /> },
                 { name: "Medium", url: "https://medium.com/@mahata777", icon: <FaMedium className="h-5 w-5" /> },
                 { name: "Vercelog", url: "https://vercelog.mahata.org", icon: <SiHono className="h-5 w-5" /> },
@@ -78,6 +77,7 @@ export default function Home() {
                 { name: "Mastodon", url: "https://mstdn.jp/@mahata", icon: <FaMastodon className="h-5 w-5" /> },
                 { name: "GitLab Pages", url: "https://mahata.gitlab.io", icon: <FaGitlab className="h-5 w-5" /> },
                 { name: "WordPress", url: "https://mahata.wordpress.com", icon: <FaWordpress className="h-5 w-5" /> },
+                { name: "Note", url: "https://note.com/ymahata", icon: <FaRegStickyNote className="h-5 w-5" /> },
               ].map((link) => (
                 <a
                   key={link.name}
