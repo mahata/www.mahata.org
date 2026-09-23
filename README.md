@@ -18,6 +18,8 @@ for what's live.
 To deploy manually (e.g. to debug the pipeline), you also need:
 
 - Node.js >= 22 (Wrangler's minimum requirement)
+- Wrangler installed globally (`pnpm add -g wrangler`), matching what CI does: this project has
+  no direct `wrangler` dependency, so a bare `wrangler` command isn't available otherwise
 - Cloudflare credentials available to Wrangler, either via `wrangler login` or a
   `CLOUDFLARE_API_TOKEN` environment variable
 - A `CLOUDFLARE_ACCOUNT_ID` environment variable, so Wrangler doesn't need to look up the
