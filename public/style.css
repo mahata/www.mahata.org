@@ -94,7 +94,7 @@ h1 {
   font-size: clamp(3rem, 9vw, 6.5rem);
   line-height: 0.9;
   font-weight: 800;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.04em;
   animation: fade-in 0.8s ease-out forwards;
 }
 
