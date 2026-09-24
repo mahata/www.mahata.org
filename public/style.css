@@ -57,6 +57,14 @@ a {
   margin: 0 auto;
 }
 
+.not-found {
+  position: relative;
+  z-index: 2;
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .site > * + * {
   margin-top: 1.25rem;
 }
@@ -164,8 +172,8 @@ h2 {
   letter-spacing: -0.03em;
 }
 
-.apps p,
-.past p {
+.app-card p,
+.past > p {
   margin-top: 0.6rem;
   color: #cbd5e1;
   line-height: 1.7;
