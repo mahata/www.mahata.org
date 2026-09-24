@@ -1,18 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
-
-const notoSans = Noto_Sans({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-noto-sans",
-});
-
-const notoSansMono = Noto_Sans_Mono({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-noto-sans-mono",
-});
 
 export const metadata: Metadata = {
   title: "Software Engineer: Yasunori MAHATA's Personal Site",
@@ -26,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${notoSans.variable} ${notoSansMono.variable} antialiased`}>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
