@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Software Engineer: Yasunori MAHATA's Personal Site</title>
-    <meta name="description" content="Personal site of Yasunori MAHATA. I list up links to web services that I use." />
+    <title>Yasunori MAHATA — Software Engineer</title>
+    <meta
+      name="description"
+      content="Personal site of Yasunori MAHATA, a full-stack software engineer working across web applications, back-end systems, and infrastructure."
+    />
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -30,26 +33,41 @@
       <symbol id="icon-hono" viewBox="0 0 24 24"><path d="M12.445.002a45.529 45.529 0 0 0-5.252 8.146 8.595 8.595 0 0 1-.555-.53 27.796 27.796 0 0 0-1.205-1.542 8.762 8.762 0 0 0-1.251 2.12 20.743 20.743 0 0 0-1.448 5.88 8.867 8.867 0 0 0 .338 3.468c1.312 3.48 3.794 5.593 7.445 6.337 3.055.438 5.755-.333 8.097-2.312 2.677-2.59 3.359-5.634 2.047-9.132a33.287 33.287 0 0 0-2.988-5.59A91.34 91.34 0 0 0 12.615.053a.216.216 0 0 0-.17-.051Zm-.336 3.906a50.93 50.93 0 0 1 4.794 6.552c.448.767.817 1.57 1.108 2.41.606 2.386-.044 4.354-1.951 5.904-1.845 1.298-3.87 1.683-6.072 1.156-2.376-.737-3.75-2.335-4.121-4.794a5.107 5.107 0 0 1 .242-2.266c.358-.908.79-1.774 1.3-2.601l1.446-2.121a397.33 397.33 0 0 0 3.254-4.24Z" /></symbol>
     </svg>
 
-    <main>
+    <main class="site">
       <header class="intro">
-        <h1>Yasunori MAHATA</h1>
-        <p>
-          I’m a software developer based in Tokyo, Japan, specializing in web development. As a full-stack engineer,
-          I work across both front-end and back-end, occasionally handling infrastructure as well.
-        </p>
-      </header>
-
-      <section>
-        <h2><svg class="icon" aria-hidden="true"><use href="#icon-globe" /></svg>Where I am on the internet.</h2>
-        <div class="grid">
-          <a class="btn" href="https://github.com/mahata" target="_blank" rel="noopener noreferrer">
-            <svg class="icon" aria-hidden="true"><use href="#icon-github" /></svg>GitHub
-          </a>
-          <a class="btn" href="https://bsky.app/profile/mahata.org" target="_blank" rel="noopener noreferrer">
-            <svg class="icon" aria-hidden="true"><use href="#icon-bluesky" /></svg>Bluesky
+        <p class="eyebrow">Software engineer</p>
+        <div class="hero">
+          <div>
+            <h1>Yasunori MAHATA</h1>
+            <p class="lead">
+              I build practical web software end to end: thoughtful front-end experiences, reliable back-end services,
+              coherent API and data integrations, and the infrastructure foundations that keep products maintainable.
+            </p>
+          </div>
+          <div class="hero-card">
+            <span>Focus</span>
+            <strong>Full-stack web development</strong>
+            <p>Product-minded engineering with an eye for maintainability, operations, and clear communication.</p>
+          </div>
+        </div>
+        <div class="actions">
+          <a class="btn primary" href="https://github.com/mahata" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#icon-github" /></svg>View GitHub
           </a>
           <a class="btn" href="https://www.linkedin.com/in/ymahata" target="_blank" rel="noopener noreferrer">
-            <svg class="icon" aria-hidden="true"><use href="#icon-linkedin" /></svg>LinkedIn
+            <svg class="icon" aria-hidden="true"><use href="#icon-linkedin" /></svg>Connect on LinkedIn
+          </a>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="section-heading">
+          <p class="eyebrow">Online presence</p>
+          <h2><svg class="icon" aria-hidden="true"><use href="#icon-globe" /></svg>Where to find me</h2>
+        </div>
+        <div class="grid">
+          <a class="btn" href="https://bsky.app/profile/mahata.org" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#icon-bluesky" /></svg>Bluesky
           </a>
           <a class="btn" href="https://zenn.dev/mahata" target="_blank" rel="noopener noreferrer">
             <svg class="icon" aria-hidden="true"><use href="#icon-zenn" /></svg>Zenn
@@ -69,8 +87,28 @@
         </div>
       </section>
 
-      <section class="past">
-        <h2><svg class="icon" aria-hidden="true"><use href="#icon-globe" /></svg>Web services I used in the past. I'm no longer active there, but I've kept these links for the record.</h2>
+      <section class="panel apps">
+        <div class="section-heading">
+          <p class="eyebrow">Apps</p>
+          <h2>Things I build</h2>
+        </div>
+        <article class="app-card">
+          <div>
+            <h3>Strongcopy</h3>
+            <p>A focused macOS utility for copying text cleanly and keeping everyday writing workflows simple.</p>
+          </div>
+          <a class="btn" href="https://strongcopy.mahata.org/" target="_blank" rel="noopener noreferrer">
+            Visit Strongcopy
+          </a>
+        </article>
+      </section>
+
+      <section class="panel past">
+        <div class="section-heading">
+          <p class="eyebrow">Archive</p>
+          <h2>Older profiles</h2>
+        </div>
+        <p>Services I used in the past. I am no longer active there, but I keep these links for the record.</p>
         <div class="grid">
           <a class="btn" href="https://mstdn.jp/@mahata" target="_blank" rel="noopener noreferrer">
             <svg class="icon" aria-hidden="true"><use href="#icon-mastodon" /></svg>Mastodon
