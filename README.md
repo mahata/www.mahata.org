@@ -1,19 +1,27 @@
 ## Getting Started
 
-First, run the development server:
+The site is plain HTML and CSS in [`public/`](public), with no build step. Edit
+`public/index.html` and `public/style.css` directly.
+
+Link icons are SVG `<symbol>`s at the top of `public/index.html`, referenced with
+`<use href="#icon-...">`. To add a link, copy an existing `<a class="btn">` block. When adding an
+icon, keep the license comment of the icon set it comes from.
+
+To preview locally, run:
 
 ```bash
 pnpm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. Opening
+`public/index.html` directly in a browser also works.
 
 ## Deploy on Netlify
 
 Production deploys are automated: every push to `main` triggers
-[`.github/workflows/nextjs.yml`](.github/workflows/nextjs.yml), which builds the static Next.js
-export and deploys `out/` to the existing Netlify site serving
-[mahata.org](https://mahata.org). That workflow is the source of truth for what is live.
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which lints the repository and
+deploys `public/` to the existing Netlify site serving [mahata.org](https://mahata.org). That
+workflow is the source of truth for what is live.
 
 Configure these GitHub Actions secrets before running the workflow:
 
@@ -28,6 +36,5 @@ To deploy manually for troubleshooting, export the same credentials and run:
 ```bash
 export NETLIFY_AUTH_TOKEN="..."
 export NETLIFY_SITE_ID="..."
-pnpm run build
 pnpm run deploy
 ```
