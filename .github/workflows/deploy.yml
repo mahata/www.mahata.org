@@ -1,19 +1,21 @@
-name: Deploy to Netlify
+name: CI and Deploy
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 concurrency:
-  group: netlify-production
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
   contents: read
 
 jobs:
-  deploy:
+  biome:
+    name: Biome check
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     defaults:
@@ -39,6 +41,33 @@ jobs:
 
       - name: Lint
         run: pnpm run lint
+
+  deploy:
+    name: Deploy to Netlify
+    needs: biome
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: netlify-production
+      cancel-in-progress: true
+    defaults:
+      run:
+        shell: bash --noprofile --norc -eo pipefail {0}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 10.4.1
+          run_install: false
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.14.0"
+          cache: "pnpm"
 
       - name: Verify Netlify credentials
         env:

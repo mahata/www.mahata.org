@@ -18,10 +18,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deploy on Netlify
 
-Production deploys are automated: every push to `main` triggers
-[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml), which lints the repository and
-deploys `public/` to the existing Netlify site serving [mahata.org](https://mahata.org). That
-workflow is the source of truth for what is live.
+Biome checks are automated for every pull request and push to `main` by
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml). After the check passes on a push to
+`main`, the workflow deploys `public/` to the existing Netlify site serving
+[mahata.org](https://mahata.org). That workflow is the source of truth for what is live.
 
 Configure these GitHub Actions secrets before running the workflow:
 
